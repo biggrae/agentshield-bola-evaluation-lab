@@ -1,0 +1,25 @@
+{
+  "base_url": "http://127.0.0.1:5000",
+  "document_path_template": "/api/documents/{document_id}",
+  "timeout_seconds": 5,
+  "cases": [
+    {
+      "owner_label": "Bob private document",
+      "document_id": "doc-102",
+      "attacker_token": "alice-token",
+      "expected_status": 404
+    },
+    {
+      "owner_label": "Alice private document",
+      "document_id": "doc-101",
+      "attacker_token": "bob-token",
+      "expected_status": 404
+    },
+    {
+      "owner_label": "Mallory private document",
+      "document_id": "doc-105",
+      "attacker_token": "alice-token",
+      "expected_status": 404
+    }
+  ]
+}
